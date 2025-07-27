@@ -45,5 +45,3 @@ def change_password(payload: ChangePassword, username: str = Depends(get_current
         {"$set": {"password": hash_password(payload.new_password)}}
     )
     return {"message": "Password changed successfully"}
-
-# Forget and Reset routes would include email logic + token expiry tracking
