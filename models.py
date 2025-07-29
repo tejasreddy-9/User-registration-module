@@ -1,9 +1,9 @@
-from pydantic import BaseModel, EmailStr, Field
+from pydantic import BaseModel, EmailStr, Field, validator
 from typing import Optional
 from datetime import date
 
 class RegisterUser(BaseModel):
-    username: str
+    username: EmailStr
     first_name: str
     last_name: str
     dob: date
@@ -12,6 +12,13 @@ class RegisterUser(BaseModel):
     comment: Optional[str]
     active: bool
     password: str
+
+    @validator("username")
+    def validate_email_domain(cls, value):
+        allowed_domains = ["@gmail.com", "@yahoo.com", "@outlook.com"]
+        if not any(value.endswith(domain) for domain in allowed_domains):
+            raise ValueError("Email must be @gmail.com, @yahoo.com, or @outlook.com only")
+        return value
 
 class LoginUser(BaseModel):
     username: str

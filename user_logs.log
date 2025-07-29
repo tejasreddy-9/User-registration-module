@@ -1,0 +1,25 @@
+2025-07-29 11:54:02,166:WARNING:(trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\Dell\AppData\Local\Programs\Python\Python313\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-07-29 11:59:30,970:WARNING:(trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\Dell\AppData\Local\Programs\Python\Python313\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-07-29 11:59:31,306:INFO:User registered: tejas@gmail.com
+2025-07-29 12:00:03,741:WARNING:Failed login for tejas@example.com
+2025-07-29 12:00:40,105:INFO:User logged in: tejas@gmail.com
+2025-07-29 12:00:58,510:INFO:User registered: tejas@example.com
+2025-07-29 12:01:08,775:INFO:User logged in: tejas@example.com
+2025-07-29 12:25:57,546:WARNING:(trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\Dell\AppData\Local\Programs\Python\Python313\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-07-29 12:25:57,825:INFO:User logged in: tejas@example.com
+2025-07-29 12:26:20,936:INFO:User registered: tejas1@gmail.com

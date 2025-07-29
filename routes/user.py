@@ -1,11 +1,10 @@
 from fastapi import APIRouter, HTTPException, status, Depends
+from fastapi.encoders import jsonable_encoder
 from models import RegisterUser, LoginUser, ChangePassword, ForgetPasswordRequest, ResetPassword
 from database import user_collection
 from utils.password_utils import *
-from auth.jwt_handler import create_jwt_token
+from auth.jwt_handler import create_jwt_token, get_current_user
 from logger import logging
-from auth.jwt_handler import get_current_user
-
 
 user_router = APIRouter()
 
@@ -16,6 +15,8 @@ def register(user: RegisterUser):
     
     user_dict = user.dict()
     user_dict["password"] = hash_password(user.password)
+    user_dict = jsonable_encoder(user_dict)  # Converts datetime.date and other non-JSON types
+
     user_collection.insert_one(user_dict)
     logging.info(f"User registered: {user.username}")
     return {"message": "User registered successfully"}
@@ -44,4 +45,5 @@ def change_password(payload: ChangePassword, username: str = Depends(get_current
         {"username": username},
         {"$set": {"password": hash_password(payload.new_password)}}
     )
+    logging.info(f"Password changed for user: {username}")
     return {"message": "Password changed successfully"}

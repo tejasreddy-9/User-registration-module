@@ -1,12 +1,12 @@
 # User Registration Module - FastAPI Based System
 
-## 📌 Overview
+## Overview
 
 This User Registration Module is built using Python’s FastAPI framework and integrates MongoDB and MySQL as backends. It provides secure and structured endpoints for user registration, login, password management, and logout functionality. Key features include JWT authentication, detailed logging using Python’s `logging` module, and custom exception handling. Postman collections are used to test and demonstrate API usage.
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Backend Framework**: FastAPI
 - **Databases**: MongoDB or MySQL
@@ -19,7 +19,7 @@ This User Registration Module is built using Python’s FastAPI framework and in
 
 ---
 
-## 🧩 Functional Modules
+## Functional Modules
 
 ### 1. Register
 
@@ -63,7 +63,7 @@ This User Registration Module is built using Python’s FastAPI framework and in
 
 ---
 
-## 🔐 Security Measures
+## Security Measures
 
 - JWT Authentication to ensure session-based access
 - Password policy:
@@ -82,7 +82,7 @@ Using FastAPI gives the benefit of high-speed asynchronous API development with 
 
 ---
 
-## ✅ When to Use
+## When to Use
 
 Use this system when building:
 
@@ -93,7 +93,7 @@ Use this system when building:
 
 ---
 
-## 💡 Advantages
+## Advantages
 
 - High performance with FastAPI
 - Clean and structured validation using Pydantic
@@ -104,7 +104,7 @@ Use this system when building:
 
 ---
 
-## ❓ Common Interview Questions
+## Common Interview Questions
 
 1. What is FastAPI and how is it different from Flask?
 2. How does JWT token-based authentication work?
