@@ -15,7 +15,7 @@ def register(user: RegisterUser):
     
     user_dict = user.dict()
     user_dict["password"] = hash_password(user.password)
-    user_dict = jsonable_encoder(user_dict)  # Converts datetime.date and other non-JSON types
+    user_dict = jsonable_encoder(user_dict) 
 
     user_collection.insert_one(user_dict)
     logging.info(f"User registered: {user.username}")
